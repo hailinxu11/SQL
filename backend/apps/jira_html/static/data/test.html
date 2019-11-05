@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="http://182.151.43.82:6060/s/97ab844257eb66a7b0de10322d40217a-CDN/-q2j3a6/802003/6411e0087192541a09d88223fb51a6a0/1.0/_/download/batch/jira.webresources:global-static/jira.webresources:global-static.css" data-wrm-key="jira.webresources:global-static" data-wrm-batch-type="resource" media="all" />
+    <title>Title</title>
+    <style>
+        .contentTable .w200{
+            width: 250px;
+        }
+
+        .contentTable .w100{
+            width: 130px;
+        }
+
+        .contentTable .confluenceTd{
+         text-align: center;
+        }
+
+        .contentTable a{
+            color: black;
+            text-decoration: none;
+            font-style: oblique;
+        }
+
+        .contentTable tr{
+            height: 36px;
+        }
+
+        .div-br {
+          height: 50px;
+        }
+
+        .h2-br{
+            float: left;
+            position: absolute;
+        }
+
+        .confluenceTd.right{
+            text-align:right;
+            padding-right: 10px;
+            width: 70px;
+        }
+
+        .confluenceTd.padding-left{
+            padding-left:10px;
+        }
+
+        td.confluenceTd>ul{
+            padding-left: 20px;
+        }
+
+        td.confluenceTd>ul>li{
+           margin-top: 5px;
+        }
+
+        td.confluenceTd li>ul {
+           padding-top: 5px;
+        }
+
+        td.confluenceTd th.confluenceTh {
+            font-weight: normal;
+        }
+
+        .panel{
+            margin: 10px 12px 10px 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <table class="confluenceTable contentTable">
+        <tbody>
+            <tr>
+                <th class="confluenceTh">序号</th>
+                <th class="confluenceTh w100">JIRA</th>
+                <th class="confluenceTh w200">名称</th>
+                <th class="confluenceTh w200">功能模块</th>
+                <th class="confluenceTh w100">预估点</th>
+                <th class="confluenceTh w100">原型图</th>
+            </tr>
+            {% for code in code1 %}
+            <tr>
+                <td class="confluenceTd">{{ loop.index }}</td>
+                <td class="confluenceTd"><a href="#{{ code[1] }}">{{ code[0] }}</a></td>
+                <td class="confluenceTd">{{ code[1] }}</td>
+                <td class="confluenceTd">{{ code[4] }}</td>
+                <td class="confluenceTd">{{ code[2] }}</td>
+                <td class="confluenceTd">{{ code[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% for key, val in code2.items() %}
+    <h3 class="h2-br">{{ key }}</h3>
+        {% for v in val %}
+        <div class="div-br"></div>
+        <table class="confluenceTable" style="width: 978px;" id="{{ v[0] }}">
+            <tbody>
+                <tr>
+                   <td class="confluenceTd right">JIRA</td>
+                   <td class="confluenceTd padding-left">{{ v[0] }}</td>
+                </tr>
+                <tr>
+                   <td class="confluenceTd right">名称</td>
+                   <td class="confluenceTd padding-left">{{ v[1] }}</td>
+                </tr>
+                <tr>
+                   <td class="confluenceTd right">预估点</td>
+                   <td class="confluenceTd padding-left">{{ v[3] }}</td>
+                </tr>
+                <tr>
+                   <td class="confluenceTd right">功能模块</td>
+                    <td class="confluenceTd padding-left">{{ v[4] }}</td>
+                </tr>
+                <tr>
+                   <td class="confluenceTd right">描述</td>
+                   <td class="confluenceTd padding-left">{{ v[2] }}</td>
+                </tr>
+                <tr>
+                <td class="confluenceTd right">详细</td>
+                {% for key2,val2 in Html.items() %}
+                    {% if key2 == v[0] %}
+                    <td class="confluenceTd padding-left">{{ val2 }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>

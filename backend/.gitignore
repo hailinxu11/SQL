@@ -1,0 +1,16 @@
+.idea
+*.pyc
+.DS_store
+backend/.pid
+backend/*.log
+static/files/
+apps/user/*.pyc
+apps/sqlexecutor/*.pyc
+apps/user/migrations/00*.py
+apps/sqlexecutor/migrations/00*.py
+apps/sqlexecutor/static/files/*.sql
+apps/jira_html/*.pyc
+apps/jira_html/migrations/000*.py
+apps/jira_html/static/data/*.csv
+apps/jira_html/static/files/*
+!apps/jira_html/static/files/.gitkeep

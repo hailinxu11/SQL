@@ -1,0 +1,1 @@
+docker run -it --rm -p 6064:8080 --name koitadmin koitadmin:latest
