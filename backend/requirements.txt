@@ -7,4 +7,4 @@ toml==0.10.0
 python_docx==0.8.7
 PyMySQL==0.9.3
 docx==0.2.4
-djangorestframework==3.10.3
+djangorestframework==3.11.2
