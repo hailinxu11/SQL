@@ -2,7 +2,7 @@ docxtpl==0.6.3
 python_gitlab==1.8.0
 requests==2.22.0
 Django==1.11.8
-Jinja2==2.10.1
+Jinja2==2.11.3
 toml==0.10.0
 python_docx==0.8.7
 PyMySQL==0.9.3
